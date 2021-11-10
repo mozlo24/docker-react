@@ -2,10 +2,7 @@ language: generic
 sudo: required
 services:
   - docker
-
-  before_install:
+before_install:
     - docker build -t firmtec/docker-react -f Dockerfile.dev .
-
-
-  script:
+script:
     - docker run -e CI=true firmtec/docker-react npm run test
